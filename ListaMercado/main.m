@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "br_com_agivis_mercadoAppDelegate.h"
+#import "MercadoAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([br_com_agivis_mercadoAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([MercadoAppDelegate class]));
     }
 }

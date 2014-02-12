@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MercadoRepository.h"
 
-@interface br_com_agivis_mercadoAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MercadoAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) MercadoRepository *repository;
 
 @end

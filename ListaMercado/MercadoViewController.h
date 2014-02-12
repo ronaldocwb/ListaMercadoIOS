@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface br_com_agivis_mercadoViewController : UIViewController
+@interface MercadoViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
+
+@property (nonatomic) NSInteger mercadoriaIndex;
+
+- (IBAction)saveTapped:(id)sender;
 
 @end

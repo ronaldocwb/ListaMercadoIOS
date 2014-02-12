@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 Ronaldo Campos. All rights reserved.
 //
 
-#import "br_com_agivis_mercadoAppDelegate.h"
+#import "MercadoAppDelegate.h"
 
-@implementation br_com_agivis_mercadoAppDelegate
+@implementation MercadoAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
     return YES;
 }
 							

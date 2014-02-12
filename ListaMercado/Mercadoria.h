@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+//TODO poderia ser um struct no lugar?
 @interface Mercadoria : NSObject
+
+@property (strong, nonatomic) NSString *nome;
+@property (nonatomic) NSInteger quantidade;
+@property (nonatomic) BOOL importante;
 
 @end
