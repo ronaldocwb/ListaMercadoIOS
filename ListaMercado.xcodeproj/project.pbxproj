@@ -479,6 +479,7 @@
 				30CE78EC18A0298000456C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30CE78ED18A0298000456C8E /* Build configuration list for PBXNativeTarget "ListaMercadoTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +488,7 @@
 				30CE78EF18A0298000456C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

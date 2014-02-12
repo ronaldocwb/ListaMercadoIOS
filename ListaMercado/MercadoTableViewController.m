@@ -44,7 +44,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self reloadList];
+    [self reloadAll];
 }
 
 - (void) reloadList{
@@ -53,6 +53,10 @@
     }else if(segment.selectedSegmentIndex == 1){
         displayArray = [appDelegate.repository getAllImportant];
     }
+}
+
+- (void) reloadAll{
+    [self reloadList];
     
     [self.tableView reloadData];
 }
@@ -79,17 +83,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     Mercadoria *m = displayArray[indexPath.row];
     
-    cell.textLabel.text = m.nome;
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:(m.importante) ? @"CellImportant" : @"Cell" forIndexPath:indexPath];
     
     if (m.importante) {
+        UILabel *cellLabel = (UILabel *) [cell viewWithTag:100];
+        cellLabel.text = m.nome;
+    }else{
+        cell.textLabel.text = m.nome;
+    }
+    
+    
+    
+    /*if (m.importante) {
         cell.backgroundColor = [UIColor grayColor];
         cell.textLabel.textColor = [UIColor whiteColor];
-    }
+        cell.imageView.image = [UIImage imageNamed:@"fav_icon.png"];
+        
+        UIImageView *aImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"heart.png"]];
+        cell.accessoryView = aImageView;
+    }*/
     
     return cell;
 }
@@ -104,6 +119,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [appDelegate.repository removeMercadoriaByIndex:indexPath.row];
+        [self reloadList];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -123,7 +139,7 @@
 }
 
 - (IBAction)selectorChange:(id)sender {
-    [self reloadList];
+    [self reloadAll];
 }
 
 @end
